@@ -1,0 +1,20 @@
+$icon-font-path: "../styles/fonts/";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+@import "variables";
+@import "components/product-list-item";
+@import "pages/home";
+
+.container-fluid {
+	// max-width: 1440px;
+}
+
+@each $region in $regions {
+	$i: index($regions, $region);
+	.region--#{$region} {
+		color: nth($region-colours, $i);
+	}
+}
