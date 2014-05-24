@@ -1,4 +1,44 @@
+.product {
+	margin-bottom: 3em;
+}
+
+.product__image-wrap{
+	margin-bottom: 0.8em;
+}
+
 .product__image {
 	display: block;
 	width: 100%;
+}
+
+.product__title {
+	font-size: 1.143em;
+	margin-bottom: 0.4em;
+}
+
+.product__family {
+	text-transform: uppercase;
+}
+
+.product__name {
+	color: #ff9600;
+}
+
+.product--new .product__image-wrap {
+	&:before {
+		background-color: #86fc04;
+		content: "New!";
+		font-size: 12px;
+		left: -22px;
+		padding: 2px 28px;
+		position: absolute;
+		transform: rotate(-45deg);
+		text-transform: uppercase;
+		top: 11px;
+	}
+}
+
+.product__image-wrap {
+	overflow: hidden;
+	position: relative;
 }
