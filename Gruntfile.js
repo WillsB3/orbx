@@ -365,7 +365,36 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
-        }
+        },
+
+		responsive_images: {
+			productThumbnails: {
+				options: {
+					sizes: [{
+						height: 197,
+						width: 263
+					}, {
+						height: 159,
+						width: 213
+					}, {
+						height: 259,
+						width: 345
+					}, {
+						height: 427,
+						width: 570
+					}, {
+						height: 277,
+						width: 370
+					}]
+				},
+				files: [{
+					expand: true,
+					src: 'assets/images/products/thumbnails/**/*.jpg',
+					// cwd: '/',
+					dest: 'app/images/products/'
+				}]
+			}
+		}
     });
 
 
@@ -414,6 +443,7 @@ module.exports = function (grunt) {
         'concat',
         'cssmin',
         'uglify',
+        'responsive_images',
         'copy:dist',
         'modernizr',
         'rev',
