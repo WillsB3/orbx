@@ -1,5 +1,9 @@
 .product {
 	margin-bottom: 3em;
+
+	@media (max-width: $product-grid-sc-breakpoint) {
+		width: 100%;
+	}
 }
 
 .product__image-wrap{

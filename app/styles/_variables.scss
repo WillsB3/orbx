@@ -1,2 +1,5 @@
 $regions: ("red", "blue", "green", "gold");
 $region-colours: #f05c48, #72beff, #56aa49, #ffd11b;
+
+// Width at which product grid becomes single column.
+$product-grid-sc-breakpoint: 628px;
