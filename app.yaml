@@ -1,22 +1,42 @@
-application: s~orbx-demo
-version: 0-2
-api_version: 1
+application: s~orbx-django
+version: 1
 runtime: python27
+api_version: 1
 threadsafe: true
 
+builtins:
+- deferred: on
+
+libraries:
+- name: django
+  version: "1.4"
+
+inbound_services:
+- warmup
+
 handlers:
+- url: /static
+  static_dir: core/static
+  expiration: '1m'
 
-# re-direct to index.html if no path is give
-- url: /
-  static_files: dist/index.html
-  upload: dist/index.html
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
 
-# access the static resources in the root directory
-- url: /(.*)
-  static_files: dist/\1
-  upload: dist/(.*)
+- url: /appengine_sessions/clean-up/
+  script: main.app
+  login: admin
+
+- url: /.*
+  script: main.app
 
 skip_files:
+- ^(.*/)?app.yaml
+- ^(.*/)?app.yml
+- ^(.*/)?index.yaml
+- ^(.*/)?index.yml
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?\..*
 - .git
 - .tmp
 - app
@@ -24,3 +44,5 @@ skip_files:
 - bower_components
 - node_modules
 - test
+- tmp
+
