@@ -346,7 +346,12 @@ module.exports = function (grunt) {
                         '!<%= config.dist %>/scripts/vendor/*'
                     ]
                 },
-                uglify: true
+                uglify: true,
+				extra: {
+					shiv: true,
+					printshiv: false,
+					cssclasses: true
+				}
             }
         },
 
@@ -371,18 +376,23 @@ module.exports = function (grunt) {
 			productThumbnails: {
 				options: {
 					sizes: [{
+						aspectRatio: false,
 						height: 197,
 						width: 263
 					}, {
+						aspectRatio: false,
 						height: 159,
 						width: 213
 					}, {
+						aspectRatio: false,
 						height: 259,
 						width: 345
 					}, {
+						aspectRatio: false,
 						height: 427,
 						width: 570
 					}, {
+						aspectRatio: false,
 						height: 277,
 						width: 370
 					}]
