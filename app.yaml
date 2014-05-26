@@ -1,0 +1,26 @@
+application: s~orbx-demo
+version: 0-1
+api_version: 1
+runtime: python27
+threadsafe: true
+
+handlers:
+
+# re-direct to index.html if no path is give
+- url: /
+  static_files: /dist/index.html
+  upload: /dist/index.html
+
+# access the static resources in the root directory
+- url: /(.*)
+  static_files: /dist/\1
+  upload: /dist/(.*)
+
+skip_files:
+- .git
+- .tmp
+- app
+- assets
+- bower_components
+- node_modules
+- test
