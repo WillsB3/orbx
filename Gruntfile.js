@@ -312,7 +312,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        'images/{,*/}*.webp',
+                        'images/**/*.{gif,jpg,png,webp}',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*'
                     ]
@@ -389,9 +389,9 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					expand: true,
-					src: 'assets/images/products/thumbnails/**/*.jpg',
-					// cwd: '/',
-					dest: 'app/images/products/'
+					cwd: 'assets/',
+					src: 'images/products/thumbnails/**/*.jpg',
+					dest: 'app/'
 				}]
 			}
 		}
@@ -438,12 +438,12 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
+        'responsive_images',
         'concurrent:dist',
         'autoprefixer',
         'concat',
         'cssmin',
         'uglify',
-        'responsive_images',
         'copy:dist',
         'modernizr',
         'rev',
