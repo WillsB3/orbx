@@ -1,1 +1,1 @@
-appcfg.py update -v .
+appcfg.py --oauth2 update -v .
