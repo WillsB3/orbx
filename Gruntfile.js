@@ -378,22 +378,27 @@ module.exports = function (grunt) {
 					sizes: [{
 						aspectRatio: false,
 						height: 197,
+						quality: 80,
 						width: 263
 					}, {
 						aspectRatio: false,
 						height: 159,
+						quality: 80,
 						width: 213
 					}, {
 						aspectRatio: false,
 						height: 259,
+						quality: 80,
 						width: 345
 					}, {
 						aspectRatio: false,
 						height: 427,
+						quality: 80,
 						width: 570
 					}, {
 						aspectRatio: false,
 						height: 277,
+						quality: 80,
 						width: 370
 					}]
 				},
@@ -448,7 +453,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
-        'responsive_images',
         'concurrent:dist',
         'autoprefixer',
         'concat',
