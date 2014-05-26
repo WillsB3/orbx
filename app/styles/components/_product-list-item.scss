@@ -28,10 +28,10 @@
 	color: #ff9600;
 }
 
-.product--new .product__image-wrap {
-	&:before {
+%product--banner {
+	.product__image-wrap:before {
 		background-color: #86fc04;
-		content: "New!";
+		content: "";
 		font-size: 12px;
 		left: -22px;
 		padding: 2px 28px;
@@ -39,6 +39,22 @@
 		transform: rotate(-45deg);
 		text-transform: uppercase;
 		top: 11px;
+	}
+}
+
+.product--new {
+	@extend %product--banner;
+	.product__image-wrap:before {
+		content: "New!";
+		background-color: #86fc04;
+	}
+}
+
+.product--soon {
+	@extend %product--banner;
+	.product__image-wrap:before {
+		content: "Soon";
+		background-color: #ffc529;
 	}
 }
 
