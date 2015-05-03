@@ -1,7 +1,7 @@
 Orbx
 ====
 
-Demonstration of a modern front-end for Orbx.
+Demonstration of a modern front-end for Orbx. Preview the deployed version at [http://orbx-demo.appspot.com/](http://orbx-demo.appspot.com/).
 
 # Requirements
 
